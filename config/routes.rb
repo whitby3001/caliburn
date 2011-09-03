@@ -1,4 +1,9 @@
 Caliburn::Application.routes.draw do
+  match 'cart' => "carts#show", :as => :cart
+  match 'empty_cart' => "carts#destroy", :as => :empty_cart
+  
+  resources :line_items
+
   get "pages/home"
 
   get "pages/contact"

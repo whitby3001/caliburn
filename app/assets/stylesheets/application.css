@@ -19,3 +19,16 @@ div.actions {
   margin-top: 10px;
 }
 
+.product-listing form, .product-listing form div {
+  display: inline;
+}
+
+td.price, td.total-line {
+  text-align: right;
+}
+
+td.total-price {
+  font-weight: bold; 
+  border-top: 1px solid #595;
+}
+

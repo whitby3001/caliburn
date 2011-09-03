@@ -1,0 +1,30 @@
+<h2>Your Cart</h2>
+
+<% if @cart.line_items.empty? %>
+	<p>Your shopping cart is empty.</p>
+<% else %>
+	<table>
+		<tr>
+			<th>Product</th>
+			<th>Quantity</th>
+			<th>Unit Price</th>
+			<th>Total Price</th>
+		</tr>
+		<% for li in @cart.line_items %>
+			<tr>
+				<td><%= li.product.name %></td>
+				<td><%= li.quantity %></td>
+				<td class="price"><%= number_to_currency(li.unit_price) %></td>
+				<td class="price"><%= number_to_currency(li.total_price) %></td>
+			</tr>
+		<% end %>
+		<tr class="total_line">
+			<td colspan="3">Total</td>
+			<td class="price total-price"><%= number_to_currency(@cart.total_price) %></td>
+		</tr>
+	</table>
+	
+	<%= button_to 'Empty cart', empty_cart_path, :method => :delete, :confirm => 'Are you sure?' %>
+<% end %>
+	
+		
