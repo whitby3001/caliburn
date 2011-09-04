@@ -29,3 +29,4 @@ gem 'jquery-rails'
 # gem 'ruby-debug'
 
 gem 'paperclip'
+gem 'aws-s3'

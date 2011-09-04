@@ -1,6 +1,9 @@
 Caliburn::Application.routes.draw do
-  match 'cart' => "carts#show", :as => :cart
-  match 'empty_cart' => "carts#destroy", :as => :empty_cart
+  match 'shopping_basket' => "basket#show", :as => :basket
+  match 'empty_basket' => "basket#destroy", :as => :empty_basket
+  match 'shop' => "shop#index", :as => :shop
+  match 'about' => "pages#about", :as => :about
+  match 'contact' => "pages#contact", :as => :contact
   
   resources :line_items
 

@@ -33,6 +33,10 @@
   </div>
 	
   <div class="actions">
-    <%= f.submit %>
+		<button name="commit" type="submit" class="positive">
+			<%= image_tag("tick.png") %> <%= @product.new_record? ? "Create Product" : "Update Product" %>
+		</button>
   </div>
 <% end %>
+
+<div style="clear: both"></div>

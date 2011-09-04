@@ -13,22 +13,46 @@
 <body>
 	<div class="container">
 		<div id="header" class="span-24 last">
-			<h1 id="header-title">Caliburn Entertainment</h1>
+			<div id="banner" class="span-20">
+				<h1 id="header-title">Caliburn Entertainment</h1>
+			</div>
+			<div id="banner-links" class="span-4 last">
+				<%= link_to(basket_path) do %>
+					<img src="/assets/basket.png">
+					<span>View Basket</span>
+				<% end %>
+			</div>
+			<div class="span-24 last">
+			  <div id="nav">
+					<ul>
+						<li>
+							<%= link_to "Home", root_path %>
+						</li>
+						<li><%= link_to "Products", shop_path %></li>
+						<li><%= link_to "Manage Products", products_path %></li>
+					<ul>
+				</div>
+			</div>
 		</div>
-		<hr />
-		<div id="menu" class="span-24 last">
-		  <%= link_to "Home", root_path %> | <%= link_to "Products", products_path %>
-		</div>
-		<hr />
 		
-		<% if flash[:notice] %>
-			<p class="success"><%= flash[:notice] %></p>
-		<% end%>
-		<% if flash[:error] %>
-			<p class="error"><%= flash[:error] %></p>
-		<% end %>
+		<div class="span-24 last">
+			<% if flash[:notice] %>
+				<p class="success"><%= flash[:notice] %></p>
+			<% end%>
+			<% if flash[:error] %>
+				<p class="error"><%= flash[:error] %></p>
+			<% end %>
+		</div>
 		
 		<%= yield %>
+		
+		<div id="footer" class="span-24">
+  		<hr/>
+			<ul>
+				<li><%= link_to "About Us", about_path %></li>
+				<li><%= link_to "Contact", about_path %></li>
+			</ul>
+  	</div>
 	</div>	
 </body>
 </html>

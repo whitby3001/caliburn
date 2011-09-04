@@ -1,7 +1,7 @@
-<h2>Your Cart</h2>
+<h2>Your Shopping Basket</h2>
 
-<% if @cart.line_items.empty? %>
-	<p>Your shopping cart is empty.</p>
+<% if @basket.line_items.empty? %>
+	<p>Your shopping basket is empty.</p>
 <% else %>
 	<table>
 		<tr>
@@ -10,7 +10,7 @@
 			<th>Unit Price</th>
 			<th>Total Price</th>
 		</tr>
-		<% for li in @cart.line_items %>
+		<% for li in @basket.line_items %>
 			<tr>
 				<td><%= li.product.name %></td>
 				<td><%= li.quantity %></td>
@@ -20,11 +20,11 @@
 		<% end %>
 		<tr class="total_line">
 			<td colspan="3">Total</td>
-			<td class="price total-price"><%= number_to_currency(@cart.total_price) %></td>
+			<td class="price total-price"><%= number_to_currency(@basket.total_price) %></td>
 		</tr>
 	</table>
 	
-	<%= button_to 'Empty cart', empty_cart_path, :method => :delete, :confirm => 'Are you sure?' %>
+	<%= link_to image_tag("basket_delete.png")+' Empty basket', empty_basket_path, :method => :delete, :confirm => 'Are you sure?', :class => "button negative" %>
 <% end %>
 	
 		

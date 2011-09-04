@@ -1,0 +1,9 @@
+development:
+  access_key_id: AKIAJK5J7WQWFILOGEVQ
+  secret_access_key: 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
+  bucket: caliburn_dev
+  
+production:
+  access_key_id: AKIAJK5J7WQWFILOGEVQ
+  secret_access_key: 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
+  bucket: caliburn_prod

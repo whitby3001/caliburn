@@ -3,17 +3,35 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require blueprint/screen
+ *= require blueprint/fancy_type
+ *= require blueprint/buttons
  *= require_self
  *= require_directory . 
 */
 
+/* banner */
+
+div#header {
+  margin-top: 10px;
+}
+
 h1#header-title {
+  margin: 0;
   color: red;
 }
 
-div#menu {
-  margin-bottom: 15px;
+div#banner-links {
+  text-align: right;
 }
+
+div#banner-links a {
+  text-decoration: none;
+}
+
+div#banner-links a span {
+  text-decoration: underline;
+}
+
 
 div.actions {
   margin-top: 10px;
@@ -32,3 +50,73 @@ td.total-price {
   border-top: 1px solid #595;
 }
 
+/* navigation */
+
+#nav{
+  height: 32px;
+  line-height: 32px;
+  background: #3B5998;
+  padding: 0;
+}
+
+#nav ul,
+#nav ul li {
+  margin: 0 0 10px 0;
+  padding: 0;
+  list-style: none;
+}
+
+#nav ul li{
+  float: left;
+  display: block;
+}
+
+#nav ul li a:link,
+#nav ul li a:visited{
+  color: #FFF;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0 10px;
+  display: block;
+}
+
+#nav ul li.current {
+  background-color: red;
+}
+
+#nav ul li a:hover{
+  color: #EBEFF7;
+}
+#nav ul li ul li{
+  float: none;
+  display: block;
+}
+
+#nav ul li ul li a:link,
+#nav ul li ul li a:visited{
+  color: #444;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0 10px;
+  clear: both;
+  border-bottom: solid 1px #DEDEDE;
+}
+
+#nav ul li ul li a:hover{
+  color: #3B5998;
+  background: #EBEFF7;
+}
+
+.submenu {
+  position: absolute;
+  width: 160px;
+  background: #FFF;
+  padding: 10px;
+  border: solid 1px #2E4B88;
+  border-top: none;
+  display: none;
+  line-height: 26px;
+  z-index: 1000;
+}

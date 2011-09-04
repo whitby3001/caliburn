@@ -12,15 +12,16 @@
 
 ActiveRecord::Schema.define(:version => 20110903174323) do
 
-  create_table "carts", :force => true do |t|
+  create_table "baskets", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "line_items", :force => true do |t|
     t.integer  "product_id"
-    t.integer  "cart_id"
+    t.integer  "basket_id"
     t.integer  "quantity",   :default => 1
+    t.decimal  "unit_price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
