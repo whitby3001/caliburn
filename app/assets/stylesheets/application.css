@@ -9,6 +9,15 @@
  *= require_directory . 
 */
 
+p + p {
+  text-indent: 0;
+  margin: 0 0 1.5em;
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+
 /* banner */
 
 div#header {
@@ -32,16 +41,19 @@ div#banner-links a span {
   text-decoration: underline;
 }
 
-
 div.actions {
   margin-top: 10px;
+}
+
+td {
+  background-color: #fff !important;
 }
 
 .product-listing form, .product-listing form div {
   display: inline;
 }
 
-td.price, td.total-line {
+td.price, tr.total-line td {
   text-align: right;
 }
 
