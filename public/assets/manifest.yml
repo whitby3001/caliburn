@@ -1,6 +1,10 @@
 --- 
 jquery.min.js: jquery-8a50feed8d29566738ad005e19fe1c2d.min.js
+basket.png: basket-fe4c4557f98db9b59feababe2a9da003.png
+tick.png: tick-3f5fc1f52b505b93f88263e0432d25ce.png
 jquery-ui.min.js: jquery-ui-7e33882a28fc84ad0e0e47e46cbf901c.min.js
 rails.png: rails-bd9ad5a560b5a3a7be0808c5cd76a798.png
-application.css: application-f0b4c1480e9b75e90fd2ec207237e848.css
-application.js: application-38fd292438fd50052a4a5b81204dc6fb.js
+application.css: application-f86e812530f908d2dcd99c2e04145752.css
+basket_put.png: basket_put-8d274114d79fdf2715fe62739c23e8d9.png
+application.js: application-8523f920ba3f12ef3aeb6c981b6ec3dc.js
+basket_delete.png: basket_delete-42f942f03c3434194063d98c735d0be7.png
