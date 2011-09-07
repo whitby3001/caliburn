@@ -48,17 +48,23 @@
 					</div>
 				</div>
 				
-				<div id="full-content-header" class="span-24 last"></div>
+				<div id="left-sidebar-header" class="span-24 last"></div>
 
-				<div id="full-content-bg" class="span-22 prepend-1 prepend-1">
-					<div class="span-22 last">
-						<div id="full-content">
-							<%= yield %>
+				<div id="left-sidebar-bg" class="span-22 prepend-1 prepend-1">
+						<div class="span-5">
+							<div id="left-sidebar-content">
+								Categories
+							</div>
 						</div>
-					</div>
+						<div class="span-17 last">
+							<div id="small-content">
+								<%= yield %>
+							</div>
+						</div>
+					
 				</div>
 
-				<div id="full-content-footer" class="span-24 last"></div>
+				<div id="left-sidebar-footer" class="span-24 last"></div>
 				
 		</div>
 	</div>

@@ -18,10 +18,68 @@ p {
   margin: 0 0 1.5em;
 }
 
-/* banner */
+body {
+  font-family: "Verdana";
+  background-color: whiteSmoke;
+  font-size: 13px;
+}
 
-div#header {
-  margin-top: 10px;
+h2 {
+  font-family: "Georgia";
+}
+
+#banner {
+  margin-top: 0px;
+}
+
+#banner-links {
+  margin-top: 50px;
+}
+
+ 
+#header {
+  height: 150px;
+  min-height: 150px;
+}
+
+#full-content, #left-sidebar-content, #small-content {
+  margin: 0 15px;
+}
+
+#full-content-header, #left-sidebar-header {
+  height:15px;
+  min-height:15px;
+}
+ 
+#full-content-footer, #left-sidebar-footer {
+  height:15px;
+  min-height:15px;
+  text-align:center;
+  margin-bottom: 20px;
+}
+
+#full-content-header {
+  background: whiteSmoke url(full-content-head.png) 0 0 no-repeat;
+}
+
+#full-content-bg {
+  background: #fff url(full-content-bg.png) 0 0 repeat-y;
+}
+
+#full-content-footer {
+  background: whiteSmoke url(full-content-foot.png) 0 0 no-repeat;
+}
+
+#left-sidebar-header {
+  background: whiteSmoke url(sidebar-head.png) 0 0 no-repeat;
+}
+
+#left-sidebar-bg {
+  background: #fff url(sidebar-bg.png) 0 0 repeat-y;
+}
+
+#left-sidebar-footer {
+  background: whiteSmoke url(sidebar-foot.png) 0 0 no-repeat;
 }
 
 h1#header-title {
@@ -60,75 +118,4 @@ td.price, tr.total-line td {
 td.total-price {
   font-weight: bold; 
   border-top: 1px solid #595;
-}
-
-/* navigation */
-
-#nav{
-  height: 32px;
-  line-height: 32px;
-  background: #3B5998;
-  padding: 0;
-}
-
-#nav ul,
-#nav ul li {
-  margin: 0 0 10px 0;
-  padding: 0;
-  list-style: none;
-}
-
-#nav ul li{
-  float: left;
-  display: block;
-}
-
-#nav ul li a:link,
-#nav ul li a:visited{
-  color: #FFF;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0 10px;
-  display: block;
-}
-
-#nav ul li.current {
-  background-color: red;
-}
-
-#nav ul li a:hover{
-  color: #EBEFF7;
-}
-#nav ul li ul li{
-  float: none;
-  display: block;
-}
-
-#nav ul li ul li a:link,
-#nav ul li ul li a:visited{
-  color: #444;
-  font-size: 11px;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0 10px;
-  clear: both;
-  border-bottom: solid 1px #DEDEDE;
-}
-
-#nav ul li ul li a:hover{
-  color: #3B5998;
-  background: #EBEFF7;
-}
-
-.submenu {
-  position: absolute;
-  width: 160px;
-  background: #FFF;
-  padding: 10px;
-  border: solid 1px #2E4B88;
-  border-top: none;
-  display: none;
-  line-height: 26px;
-  z-index: 1000;
 }
