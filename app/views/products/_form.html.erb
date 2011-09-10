@@ -1,7 +1,7 @@
 <%= form_for(@product, :html => {:multipart => true}) do |f| %>
   <% if @product.errors.any? %>
     <div class="error">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <h3><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h3>
 
       <ul>
       <% @product.errors.full_messages.each do |msg| %>
@@ -15,6 +15,12 @@
     <%= f.label :name %><br />
     <%= f.text_field :name, :class => "title" %>
   </div>
+
+	<div class="field">
+    <%= f.label :category_id %><br />
+    <%= f.select :category_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }, :prompt => true %>
+  </div>
+
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description, :class => "text" %>
@@ -36,7 +42,8 @@
 		<button name="commit" type="submit" class="positive">
 			<%= image_tag("tick.png") %> <%= @product.new_record? ? "Create Product" : "Update Product" %>
 		</button>
+		<div style="clear: both"></div>
   </div>
 <% end %>
 
-<div style="clear: both"></div>
+

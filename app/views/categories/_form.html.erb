@@ -1,0 +1,31 @@
+<%= form_for(@category) do |f| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation" class="error">
+      <h3><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h3>
+
+      <ul>
+      <% @category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :class => "title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :parent_id %><br />
+    <%= f.select :parent_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }, :include_blank => true %>
+  </div>
+
+
+  <div class="actions">
+    <button name="commit" type="submit" class="positive">
+			<%= image_tag("tick.png") %> <%= @category.new_record? ? "Create Category" : "Update Category" %>
+		</button>
+		<div style="clear: both"></div>
+  </div>
+<% end %>

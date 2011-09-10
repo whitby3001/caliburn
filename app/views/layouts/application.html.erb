@@ -1,65 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= title %></title>
-	<%= stylesheet_link_tag    "application" %>
-	<link rel="stylesheet" href="/assets/blueprint/print.css" type="text/css" media="print"> 
-  <!--[if lt IE 8]>
-    <link rel="stylesheet" href="/assets/blueprint/ie.css" type="text/css" media="screen, projection">
-  <![endif]-->
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <%= render :partial => 'layouts/head' %>
 </head>
 <body>
 	<div class="container">
-				<div id="header" class="span-24 last">
-					<div id="banner" class="span-18 prepend-1">
-						<%= link_to image_tag("logo.png"), root_path %>
-					</div>
-					<div id="banner-links" class="span-4 append-1 last">
-						<%= link_to(basket_path) do %>
-							<img src="/assets/basket.png">
-							<span>View Basket</span>
-						<% end %>
-					</div>
-					<div class="span-22 prepend-1 append-1 last">
-					  <div id="menu">
-						    <ul class="menu">
-						        <li class="first"><%= link_to content_tag(:span, "Home"), root_path %>
-						            <!-- <div><ul>
-						            						                <li><a href="#" class="parent"><span>Sub Item 1</span></a>
-						            						                    <div><ul>
-						            						                        <li><a href="#" class="parent"><span>Sub Item 1.1</span></a>
-						            						                            <div><ul>
-						            						                                <li><a href="#"><span>Sub Item 1.1.1</span></a></li>
-						            						                                <li><a href="#"><span>Sub Item 1.1.2</span></a></li>
-						            						                            </ul></div>
-						            						                        </li>
-						            						                    </ul></div>
-						            						                </li>
-						            						                <li><a href="#"><span>Sub Item 2</span></a></li>
-						            						                <li><a href="#"><span>Sub Item 3</span></a></li>
-						            						            </ul></div> -->
-						        </li>
-						        <li><%= link_to content_tag(:span, "Shop"), shop_path %></li>
-						        <li><%= link_to content_tag(:span, "Manage Products"), products_path %></li>
-						    </ul>
-						</div>
+		<%= render :partial => 'layouts/banner' %>
+		<div id="full-content-header" class="span-24 last"></div>
+			<div id="full-content-bg" class="span-22 prepend-1 prepend-1">
+				<div class="span-22 last">
+					<div id="full-content">
+						<%= yield %>
 					</div>
 				</div>
-				
-				<div id="full-content-header" class="span-24 last"></div>
-
-				<div id="full-content-bg" class="span-22 prepend-1 prepend-1">
-					<div class="span-22 last">
-						<div id="full-content">
-							<%= yield %>
-						</div>
-					</div>
-				</div>
-
-				<div id="full-content-footer" class="span-24 last"></div>
-				
+			</div>
+			<div id="full-content-footer" class="span-24 last"></div>
 		</div>
 	</div>
 </body>

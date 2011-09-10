@@ -31,6 +31,8 @@ GEM
     activesupport (3.1.0)
       multi_json (~> 1.0)
     arel (2.2.1)
+    awesome_nested_set (2.0.2)
+      activerecord (>= 3.0.0)
     aws-s3 (0.6.2)
       builder
       mime-types
@@ -114,6 +116,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_nested_set
   aws-s3
   coffee-rails (~> 3.1.0)
   jquery-rails

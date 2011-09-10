@@ -20,7 +20,7 @@ end
 gem 'jquery-rails'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+#gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -30,3 +30,4 @@ gem 'jquery-rails'
 
 gem 'paperclip'
 gem 'aws-s3'
+gem 'awesome_nested_set'

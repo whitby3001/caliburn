@@ -1,21 +1,39 @@
-	<table class="product-listing">
-	  <tr>
-			<th></th>
-	    <th>Name</th>
-	    <th>Description</th>
-	    <th>Price</th>
-	    <th>Quantity</th>
-	    <th></th>
-	  </tr>
-
-	<% @products.each do |product| %>
-	  <tr>
-			<td><%= image_tag product.image.url(:thumb) unless product.image.nil? %></td>
-	    <td><%= product.name %></td>
-	    <td><%= product.description %></td>
-	    <td><%= number_to_currency(product.price) %></td>
-	    <td><%= product.quantity %></td>
-	    <td><%= link_to image_tag('basket_put.png')+" Buy", line_items_path(:product_id => product), :method => :post, :class => "button positive" %></td>
-	  </tr>
+<% content_for(:sidebar) do %>
+	<h3>Refine</h3>
+	<% unless @root_category.nil? or @root_category.children.empty? %>
+		<ul class="categories">
+			<% for sub_category in @root_category.children %>
+				<li class="<%= 'current' if sub_category == @category %>"><%= link_to_unless_current sub_category.name, shop_path(:category => sub_category.id) %></li>
+				<% unless sub_category.children.empty? %>
+					<ul>
+						<% for sub_sub_category in sub_category.children %>
+							<li class="<%= 'current' if sub_sub_category == @category %>"><%= link_to_unless_current sub_sub_category.name, shop_path(:category => sub_sub_category.id) %></li>
+						<% end %>
+					</ul>
+				<% end %>
+			<% end %>
+		</ul>
 	<% end %>
-	</table>
+<% end %>
+
+<table class="product-listing">
+  <tr>
+		<th></th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+		<td><%= image_tag product.image.url(:thumb) unless product.image.nil? %></td>
+    <td><%= product.name %></td>
+    <td><%= product.description %></td>
+    <td><%= number_to_currency(product.price) %></td>
+    <td><%= product.quantity %></td>
+    <td><%= link_to image_tag('basket_put.png')+" Buy", line_items_path(:product_id => product), :method => :post, :class => "button positive" %></td>
+  </tr>
+<% end %>
+</table>
