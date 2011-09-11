@@ -1,4 +1,6 @@
 Caliburn::Application.routes.draw do
+  devise_for :users
+
   resources :categories
 
   match 'shopping_basket' => "basket#show", :as => :basket
@@ -7,13 +9,11 @@ Caliburn::Application.routes.draw do
   match 'about' => "pages#about", :as => :about
   match 'contact' => "pages#contact", :as => :contact
   
-  resources :line_items
-
-  get "pages/home"
-
-  get "pages/contact"
+  devise_scope :user do 
+    get "/admin" => "devise/sessions#new"
+  end
   
-  get "pages/about"
+  resources :line_items
 
   resources :products
 

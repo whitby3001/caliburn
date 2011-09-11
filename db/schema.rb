@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110910105926) do
+ActiveRecord::Schema.define(:version => 20110911150016) do
 
   create_table "baskets", :force => true do |t|
     t.datetime "created_at"
@@ -48,5 +48,16 @@ ActiveRecord::Schema.define(:version => 20110910105926) do
     t.datetime "image_updated_at"
     t.integer  "category_id"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                              :default => "", :null => false
+    t.string   "encrypted_password",  :limit => 128, :default => "", :null => false
+    t.datetime "remember_created_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "admin"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

@@ -7,7 +7,7 @@ class LineItemsController < ApplicationController
     if @line_item.save
       redirect_to(basket_path)
     else
-      redirect_to(basket_path, :error => "Unable to add product to shopping basket")
+      redirect_to(basket_path, :alert => "Unable to add product to shopping basket")
     end
   end
 

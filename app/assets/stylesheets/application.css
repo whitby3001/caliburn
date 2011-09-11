@@ -24,8 +24,12 @@ body {
   font-size: 13px;
 }
 
-h2, h3 {
+h1, h2, h3 {
   font-family: "Georgia";
+}
+
+h1 {
+  font-size: 30px;
 }
 
 #banner {
@@ -38,8 +42,8 @@ h2, h3 {
 
  
 #header {
-  height: 150px;
-  min-height: 150px;
+  height: 145px;
+  min-height: 145px;
 }
 
 #full-content, #left-sidebar-content, #small-content {

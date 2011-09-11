@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_filter :authorize_access, :except => :show
+  
   # GET /products
   def index
     @products = Product.all
@@ -47,5 +49,12 @@ class ProductsController < ApplicationController
     @product.destroy
 
     redirect_to products_url
+  end
+  
+  private
+  
+  def authorize_access
+    authorize! :create, Product
+    
   end
 end

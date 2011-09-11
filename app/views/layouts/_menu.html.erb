@@ -27,7 +27,17 @@
 					<% end %>
 				</li>
 			<% end %>
-			<li><%= link_to content_tag(:span, "Manage Products"), products_path %></li>
+			<% if current_user and current_user.admin? %>
+				<li>
+					<%= link_to content_tag(:span, "Admin"), products_path %>
+					<div>
+						<ul>
+							<li class="parent"><%= link_to content_tag(:span, "Products"), products_path %></li>
+							<li class="parent"><%= link_to content_tag(:span, "Categories"), categories_path %></li>
+						</ul>
+					</div>
+				</li>
+			<% end %>
 		</ul>
 	</div>
 </div>
