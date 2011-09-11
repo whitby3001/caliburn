@@ -13,13 +13,13 @@
   <tr>
     <td><span class="level-<%= category.level %>"><%= category.name %></span></td>
 		<td><%= category.parent.name unless category.parent.nil? %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'View', category, :class => "button positive" %></td>
+    <td><%= link_to 'Edit', edit_category_path(category), :class => "button" %></td>
+    <td><%= link_to 'Destroy', category, :class => "button negative", :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Category', new_category_path %>
+<%= link_to 'New Category', new_category_path, :class => "button positive" %>

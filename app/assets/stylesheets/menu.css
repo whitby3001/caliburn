@@ -161,3 +161,8 @@ div#menu li.back {
 div#menu li.back .left {
 }
 
+div#menu a:hover, div#menu a span {
+  text-decoration: none;
+}
+
+
