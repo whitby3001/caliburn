@@ -8,7 +8,8 @@ class Product < ActiveRecord::Base
                     :styles => { :medium => ["300x300>", :png], :small => ["200x200", :png], :thumb => ["100x100", :png] },
                     :convert_options => {:thumbnail => "-background transparent -gravity center -extent 100x100", :small => "-background transparent -gravity center -extent 200x200"},
                     :storage => (Rails.env.production? ? :s3 : :filesystem), 
-                    :s3_credentials => "#{Rails.root}/config/s3.yml"
+                    :s3_credentials => "#{Rails.root}/config/s3.yml",
+                    :path => (Rails.env.production? ? "/:class/:attachment/:id/:style/:filename" : "/system/:attachment/:id/:style/:filename")
   
   validates_presence_of :name, :category, :description, :price, :quantity
   
