@@ -6,4 +6,8 @@ class Category < ActiveRecord::Base
   has_many :products
   
   validates_presence_of :name
+  
+  def category_breadcrumb
+    self_and_ancestors.collect{ |c| c.name }.join(" > ")
+  end
 end

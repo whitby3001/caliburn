@@ -25,7 +25,10 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: "Georgia";
+  font-family: "Century Gothic";
+  letter-spacing: -1px;
+  font-weight: 100;
+  color: #666;
 }
 
 h1 {
@@ -196,4 +199,19 @@ div.product-listing span.product-buy {
 
 .clear {
   clear:both;
+}
+
+div#product-details div.product-price {
+  float: left;
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+div#product-details div.product-buy {
+  float: right;
+}
+
+.pagination {
+  margin-top: 1em;
+  font-size: 14px;
 }
