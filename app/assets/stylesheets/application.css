@@ -158,10 +158,42 @@ ul.categories li.current {
   background-color: lightGray;
 }
 
+a, a:hover {
+  color: #2166A2;
+}
+
 a, a span {
   text-decoration: none;
 }
 
 a:hover, a span:hover {
   text-decoration: underline;
+}
+
+div.product-listing {
+  width: 210px;
+  margin-right: 3px;
+  float:left;
+}
+
+div.product-listing span.product-name {
+  display: block;
+}
+
+div.product-listing span.product-name a {
+  font-weight: bold;
+}
+
+div.product-listing span.product-price {
+  float: left;
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+div.product-listing span.product-buy {
+  float: right;
+}
+
+.clear {
+  clear:both;
 }
