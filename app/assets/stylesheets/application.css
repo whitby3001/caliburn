@@ -175,6 +175,7 @@ div.field, div.actions {
 
 ul.categories {
   padding-left: 0px;
+  margin: 0;
 }
 
 ul.categories, ul.categories li {
@@ -190,7 +191,7 @@ ul.categories li.current {
 }
 
 ul.sub-categories {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 a, a:hover {
@@ -229,10 +230,27 @@ div.product-listing span.product-name a {
   font-weight: bold;
 }
 
-div.product-listing span.product-price {
+div.product-listing div.product-prices {
+  width: 50%;
   float: left;
   margin-top: 1em;
+}
+
+div.product-listing span.product-price {
+  display: block;
   font-weight: bold;
+}
+
+div.product-listing span.product-postage {
+  display: block;
+  font-size: 10px;
+  color: #666;
+}
+
+div.product-listing div.product-buy {
+  text-align: right;
+  width: 50%;
+  float: right;
 }
 
 div.product-listing span.product-buy {

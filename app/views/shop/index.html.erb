@@ -24,11 +24,11 @@
 			<li class="<%= 'current' if @root_category == @category %>"><%= link_to_unless_current @root_category.name.titleize, shop_path(:category => @root_category.id) %></li>
 			<% unless @root_category.children.empty? %>
 				<ul class="categories sub-categories">
-					<% for sub_category in @root_category.children %>
+					<% for sub_category in @root_category.children.sort_by(&:name) %>
 						<li class="<%= 'current' if sub_category == @category %>"><%= link_to_unless_current sub_category.name.titleize, shop_path(:category => sub_category.id) %></li>
 						<% unless sub_category.children.empty? %>
 							<ul class="categories">
-								<% for sub_sub_category in sub_category.children %>
+								<% for sub_sub_category in sub_category.children.sort_by(&:name) %>
 									<li class="<%= 'current' if sub_sub_category == @category %>"><%= link_to_unless_current sub_sub_category.name.titleize, shop_path(:category => sub_sub_category.id) %></li>
 								<% end %>
 							</ul>
