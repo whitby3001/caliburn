@@ -9,7 +9,8 @@ class Product < ActiveRecord::Base
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
                     :path => (Rails.env.production? ? "/:class/:attachment/:id/:style/:filename" : "/system/:attachment/:id/:style/:filename")
   
-  validates_presence_of :name, :category, :description, :price, :quantity
+  validates_presence_of :name, :category, :description, :price, :quantity, :postage_cost
+  validates_numericality_of :price, :postage_cost
   
   scope :in_stock, where("quantity > 0")
   scope :featured, where(:featured => true)

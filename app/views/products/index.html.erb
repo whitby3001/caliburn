@@ -6,6 +6,7 @@
     <th>Name</th>
 		<th>Category</th>
     <th>Price</th>
+		<th>Postage Cost</th>
     <th>Quantity</th>
 		<th>Featured</th>
     <th></th>
@@ -19,6 +20,7 @@
     <td><%= product.name %></td>
     <td><%= product.category_breadcrumb %></td>
     <td><%= number_to_currency(product.price) %></td>
+		<td><%= number_to_currency(product.postage_cost) %></td>
     <td><%= product.quantity %></td>
 		<td><%= image_tag("tick.png") if product.featured? %></td>
     <td><%= link_to 'View', product, :class => "button positive" %></td>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110913185013) do
+ActiveRecord::Schema.define(:version => 20110913193545) do
 
   create_table "baskets", :force => true do |t|
     t.datetime "created_at"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20110913185013) do
   create_table "products", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.decimal  "price"
+    t.decimal  "price",              :precision => 8, :scale => 2
     t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20110913185013) do
     t.datetime "image_updated_at"
     t.integer  "category_id"
     t.boolean  "featured"
+    t.decimal  "postage_cost",       :precision => 8, :scale => 2
   end
 
   create_table "users", :force => true do |t|
