@@ -161,6 +161,10 @@ ul.categories li.current {
   background-color: lightGray;
 }
 
+ul.sub-categories {
+  margin-left: 10px;
+}
+
 a, a:hover {
   color: #2166A2;
 }
@@ -171,6 +175,12 @@ a, a span {
 
 a:hover, a span:hover {
   text-decoration: underline;
+}
+
+div.product-row {
+  border-top: thin dotted #666;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 div.product-listing {
@@ -214,4 +224,32 @@ div#product-details div.product-buy {
 .pagination {
   margin-top: 1em;
   font-size: 14px;
+}
+
+div#footer-links {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p.out-of-stock {
+  color: #D12F19;
+  font-weight: bold;
+}
+
+p.in-stock {
+  font-weight: bold;
+  color: #529214;
+}
+
+div.contact-icon {
+  float: left;
+}
+
+div.contact-detail {
+  float: left;
+  margin-left: 10px;
+}
+
+div.contact-container {
+  margin: 20px 0;
 }

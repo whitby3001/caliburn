@@ -8,6 +8,6 @@ class Category < ActiveRecord::Base
   validates_presence_of :name
   
   def category_breadcrumb
-    self_and_ancestors.collect{ |c| c.name }.join(" > ")
+    self_and_ancestors.collect{ |c| c.name.titleize }.join(" > ")
   end
 end

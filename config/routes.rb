@@ -8,6 +8,7 @@ Caliburn::Application.routes.draw do
   match 'shop' => "shop#index", :as => :shop
   match 'about' => "pages#about", :as => :about
   match 'contact' => "pages#contact", :as => :contact
+  match 'terms' => "pages#terms", :as => :terms
   
   devise_scope :user do 
     get "/admin" => "devise/sessions#new"

@@ -5,7 +5,6 @@
 		<th></th>
     <th>Name</th>
 		<th>Category</th>
-    <th>Description</th>
     <th>Price</th>
     <th>Quantity</th>
     <th></th>
@@ -18,7 +17,6 @@
 		<td><%= image_tag product.image.url(:thumb) unless product.image.nil? %></td>
     <td><%= product.name %></td>
     <td><%= product.category_breadcrumb %></td>
-		<td><%= product.description %></td>
     <td><%= number_to_currency(product.price) %></td>
     <td><%= product.quantity %></td>
     <td><%= link_to 'View', product, :class => "button positive" %></td>
