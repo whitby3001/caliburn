@@ -1,3 +1,65 @@
-<h1>Welcome</h1>
+<div class="span-22 prepend-1 append-1">
+	<h1 class="homepage">Welcome</h1>
+	<p>
+		Caliburn Entertainment is a web-based retailer selling a wide variety of quality items including action figures, miniatures and books.
+		We specialise in Transformers and Warhammer, but also sell many other science fiction and fantasy related items.
+	</p>
+</div>
 
-<p>Welcome to Caliburn Entertainment.</p>
+<div class="span-22 prepend-1 append-1">
+	<h2>Featured Products</h2>
+</div>
+<div class="span-22 prepend-1 append-1">
+	<div class="span-17">
+		<div class="standard-box-header" class="span-17 last"></div>
+		<div class="standard-box-bg" class="span-17 last">
+			<div class="standard-box-content">
+				<% unless @featured_products.empty? %>
+					<% @featured_products.each do |product| %>
+						<%= render :partial => '/shop/product_listing', :locals => {:product => product} %>
+					<% end %>
+				<% else %>
+					No currently featured products.
+				<% end %>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="standard-box-footer" class="span-17 last"></div>
+		
+		<h2>New Arrivals</h2>
+		<div class="standard-box-header" class="span-17 last"></div>
+		<div class="standard-box-bg" class="span-17 last">
+			<div class="standard-box-content">
+				<% @new_products.each do |product| %>
+					<%= render :partial => '/shop/product_listing', :locals => {:product => product} %>
+				<% end %>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="standard-box-footer" class="span-17 last"></div>
+	</div>
+	
+	<div class="span-5 last">
+		<div class="sidebar-single-header" class="span-5 last"></div>
+		<div class="sidebar-single-bg" class="span-5 last">
+			<div class="sidebar-single-content">
+				<div id="paypal-logo">
+					<h3>We accept:</h3>
+					<!-- PayPal Logo -->
+					<table border="0" cellpadding="10" cellspacing="0" align="center">
+						<tr>
+							<td align="center">
+								<a href="#" onclick="javascript:window.open('https://www.paypal.com/uk/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside','olcwhatispaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=400, height=350');">
+									<img  src="https://www.paypal.com/en_GB/i/bnr/vertical_solution_PP.gif" border="0" alt="Solution Graphics">
+								</a>
+							</td>
+						</tr>
+					</table>
+					<!-- PayPal Logo -->
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="sidebar-single-footer" class="span-5 last"></div>
+	</div>
+</div>

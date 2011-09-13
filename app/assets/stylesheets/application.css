@@ -35,34 +35,62 @@ h1 {
   font-size: 30px;
 }
 
+h1.homepage {
+  color: #b9140c;
+}
+
 #banner {
   margin-top: 0px;
+  margin-bottom: 5px;
 }
 
 #banner-links {
-  margin-top: 50px;
+  margin-top: 60px;
 }
-
  
 #header {
-  height: 145px;
-  min-height: 145px;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
-#full-content, #left-sidebar-content, #small-content {
+#full-content, #left-sidebar-content, #small-content, .sidebar-single-content, .standard-box-content {
   margin: 0 15px;
 }
 
-#full-content-header, #left-sidebar-header {
+#full-content-header, #left-sidebar-header, .sidebar-single-header, .standard-box-header {
   height:15px;
   min-height:15px;
 }
  
-#full-content-footer, #left-sidebar-footer {
+#full-content-footer, #left-sidebar-footer, .sidebar-single-footer, .standard-box-footer {
   height:15px;
   min-height:15px;
   text-align:center;
   margin-bottom: 20px;
+}
+
+.sidebar-single-bg {
+  background: #fff url(sidebar-single-bg.png) 0 0 repeat-y;
+}
+
+.sidebar-single-header {
+  background: whiteSmoke url(sidebar-single-head.png) 0 0 no-repeat;
+}
+
+.sidebar-single-footer {
+  background: whiteSmoke url(sidebar-single-foot.png) 0 0 no-repeat;
+}
+
+.standard-box-bg {
+  background: #fff url(standard-box-bg.png) 0 0 repeat-y;
+}
+
+.standard-box-header {
+  background: whiteSmoke url(standard-box-head.png) 0 0 no-repeat;
+}
+
+.standard-box-footer {
+  background: whiteSmoke url(standard-box-foot.png) 0 0 no-repeat;
 }
 
 #full-content-header {
@@ -252,4 +280,19 @@ div.contact-detail {
 
 div.contact-container {
   margin: 20px 0;
+}
+
+div#home-sidebar {
+  background-color: white;
+  border: thin dotted #666;
+  padding: 10px;
+}
+
+div#paypal-logo table {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+div#paypal-logo h3 {
+  margin-bottom: 5px;
 }

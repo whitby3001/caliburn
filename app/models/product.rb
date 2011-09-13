@@ -1,6 +1,4 @@
 class Product < ActiveRecord::Base
-  default_scope :order => 'name'
-  
   has_many :line_items, :dependent => :destroy
   belongs_to :category
   
@@ -12,6 +10,9 @@ class Product < ActiveRecord::Base
                     :path => (Rails.env.production? ? "/:class/:attachment/:id/:style/:filename" : "/system/:attachment/:id/:style/:filename")
   
   validates_presence_of :name, :category, :description, :price, :quantity
+  
+  scope :in_stock, where("quantity > 0")
+  scope :featured, where(:featured => true)
   
   def category_breadcrumb
     category.nil? ? nil : category.category_breadcrumb

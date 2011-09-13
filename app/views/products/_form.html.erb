@@ -34,6 +34,10 @@
     <%= f.number_field :quantity, :class => "text" %>
   </div>
 	<div class="field">
+    <%= f.label :featured %><br />
+    <%= f.check_box :featured %>
+  </div>
+	<div class="field">
     <%= f.label :image %><br />
     <%= f.file_field :image %>
   </div>

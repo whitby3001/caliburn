@@ -7,6 +7,7 @@
 		<th>Category</th>
     <th>Price</th>
     <th>Quantity</th>
+		<th>Featured</th>
     <th></th>
 		<th></th>
 		<th></th>
@@ -19,6 +20,7 @@
     <td><%= product.category_breadcrumb %></td>
     <td><%= number_to_currency(product.price) %></td>
     <td><%= product.quantity %></td>
+		<td><%= image_tag("tick.png") if product.featured? %></td>
     <td><%= link_to 'View', product, :class => "button positive" %></td>
 		<td><%= link_to 'Edit', edit_product_path(product), :class => "button" %></td>
 		<td><%= link_to 'Delete', product, :class => "button negative", :confirm => 'Are you sure you want to delete this product?', :method => :delete %></td>

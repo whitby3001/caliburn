@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110911150016) do
+ActiveRecord::Schema.define(:version => 20110913185013) do
 
   create_table "baskets", :force => true do |t|
     t.datetime "created_at"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20110911150016) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "category_id"
+    t.boolean  "featured"
   end
 
   create_table "users", :force => true do |t|
