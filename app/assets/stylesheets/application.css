@@ -205,6 +205,10 @@ a:hover, a span:hover {
   text-decoration: underline;
 }
 
+table.product-listing td, table.product-listing th {
+  padding: 4px 5px;
+}
+
 div.product-row {
   border-top: thin dotted #666;
   padding-top: 5px;
