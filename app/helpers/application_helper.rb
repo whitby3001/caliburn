@@ -8,4 +8,14 @@ module ApplicationHelper
       "#{base_title} | #{@title}"
     end
   end
+  
+  def category_breadcrumb(category)
+    unless category.nil?
+      links = []
+      category.self_and_ancestors.each do |cat|
+        links << link_to(cat.name.titleize, shop_path(:category => cat.id))
+      end
+      return content_tag(:p, raw(links.join(" > ")))
+    end
+  end
 end

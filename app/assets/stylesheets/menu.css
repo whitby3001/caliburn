@@ -52,7 +52,7 @@ div#menu li div {
     list-style: none;
     float: left;
     position: absolute;
-    top: 45px;
+    top: 44px;
     left: 0;
     width: 208px;
     z-index: 11;
@@ -147,7 +147,7 @@ div#menu ul ul li {
 /* menu::level3 */
 div#menu ul ul div {
     width: 208px;
-    margin: -50px 0 0 190px !important;
+    margin: -44px 0 0 191px !important;
     height: auto;
     _padding: 0 0 9px 3px;
 }

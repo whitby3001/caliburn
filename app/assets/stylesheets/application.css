@@ -181,8 +181,8 @@ ul.categories li.current {
   background-color: lightGray;
 }
 
-ul.sub-categories {
-  margin-left: 5px;
+ul.categories {
+  font-size: 12px;
 }
 
 a, a:hover {
@@ -250,6 +250,18 @@ div.product-listing div.product-buy {
 
 div.product-listing span.product-buy {
   float: right;
+}
+
+div#product-details h1 {
+  margin-bottom: 5px;
+}
+
+div#product-details p.breadcrumb {
+  margin-bottom: 0;
+}
+
+div#product-details p.description {
+  margin-top: 1.5em;
 }
 
 .clear {

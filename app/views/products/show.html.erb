@@ -3,9 +3,10 @@
 </div>
 
 <div id="product-details" class="span-13 last">
-	<h1><%= @product.name %></h1>
+	<h1><%= @product.name.titleize %></h1>
+	<%= category_breadcrumb(@product.category) %>
 
-	<p>
+	<p class="description">
 	  <%= @product.description %>
 	</p>
 
