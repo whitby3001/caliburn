@@ -19,7 +19,8 @@ nav_dropdown_grad.png: nav_dropdown_grad-3daed58396fc796ca5e574f9250f130a.png
 nav-left.png: nav-left-18b542e01079efaab3a7268da50de56f.png
 full-content-foot.png: full-content-foot-23b9f9fb8cf2fafb07ffa2f769038a5d.png
 rails.png: rails-bd9ad5a560b5a3a7be0808c5cd76a798.png
-application.css: application-6d416d67b4293e56e29a10a127a7a0ed.css
+basket_go.png: basket_go-b392f6d8fe81f9b67d7109a830ecbf51.png
+application.css: application-64ca53b43595f8d4696a554393334258.css
 standard-box-foot.png: standard-box-foot-13c8e6493f48331b33b974ce2d2b0204.png
 nav-bg.gif: nav-bg-3f312312611d88a924d55af7eaa3a5b9.gif
 full-content-bg.png: full-content-bg-644c5da4af77281ad0f35a01bba7aaa8.png
@@ -30,9 +31,11 @@ sidebar-bg.png: sidebar-bg-313fa10ffff50e88209054997224a345.png
 pencil.png: pencil-acd383b1206e4398413d98dba2df4264.png
 nav_separator.png: nav_separator-e769f357262e1ebf5ad77612dfb5fccb.png
 logo.png: logo-687ac34377607b009a0e79248e3e8430.png
+delete.png: delete-582b6390edbb30d38a17600c5caf40da.png
 basket_put.png: basket_put-8d274114d79fdf2715fe62739c23e8d9.png
 application.js: application-fe1fdceeec338156c80e0e6759ecd83c.js
 submenu-selected-top.gif: submenu-selected-top-df1cc5b7570ef8bd507200a05033cc82.gif
 sidebar-single-foot.png: sidebar-single-foot-4ce6a82bab820a62e0f6c019f2fa25ed.png
 ebay_shop.png: ebay_shop-0c039e6496f478121bcf6a3b223505fd.png
 basket_delete.png: basket_delete-42f942f03c3434194063d98c735d0be7.png
+add.png: add-ec82dcca30a90c51bbfa878c1c265176.png

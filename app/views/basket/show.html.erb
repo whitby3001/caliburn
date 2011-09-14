@@ -3,28 +3,49 @@
 <% if @basket.line_items.empty? %>
 	<p>Your shopping basket is empty.</p>
 <% else %>
-	<table>
+	<table class="basket">
 		<tr>
-			<th>Product</th>
-			<th>Quantity</th>
+			<th colspan="2">Product</th>
+			<th>Status</th>
+			<th class="quantity">Quantity</th>
+			<th></th>
 			<th>Unit Price</th>
 			<th>Total Price</th>
 		</tr>
 		<% for li in @basket.line_items %>
-			<tr>
+			<tr class="product">
+				<td><%= image_tag li.product.image.url(:thumb) unless li.product.image.nil? %></td>
 				<td><%= li.product.name %></td>
-				<td><%= li.quantity %></td>
+				<td class="<%= li.product.quantity == 0 ? 'out-of-stock' : 'in-stock' %>">
+					<%= li.product.quantity == 0 ? "Out of stock" : "#{li.product.quantity} available" %>
+				</td>
+				<td class="quantity"><%= li.quantity %></td>
+				<td><%= link_to image_tag("basket_delete.png")+' Remove', line_item_path(li), :method => :delete, :class => "button negative" %></td>
 				<td class="price"><%= number_to_currency(li.unit_price) %></td>
 				<td class="price"><%= number_to_currency(li.total_price) %></td>
 			</tr>
 		<% end %>
 		<tr class="total-line">
-			<td colspan="3">Total</td>
+			<td colspan="6">Postage &amp; Packaging</td>
+			<td class="price total-price"><%= number_to_currency(@basket.total_postage) %></td>
+		</tr>
+		<tr class="total-line">
+			<td colspan="6">Total</td>
 			<td class="price total-price"><%= number_to_currency(@basket.total_price) %></td>
 		</tr>
 	</table>
-	
-	<%= link_to image_tag("basket_delete.png")+' Empty basket', empty_basket_path, :method => :delete, :confirm => 'Are you sure?', :class => "button negative" %>
+	<div class="basket-actions">
+		<div class="basket-actions-left">
+			<%= link_to image_tag("basket_delete.png")+' Empty basket', empty_basket_path, :method => :delete, :confirm => 'Are you sure?', :class => "button negative" %>
+		</div>
+		<div class="basket-actions-right">
+			<div class="checkout">
+				<%= link_to image_tag("basket_go.png")+' Checkout', "", :class => "button positive" %>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
 <% end %>
 	
 		

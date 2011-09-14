@@ -146,15 +146,6 @@ td {
   display: inline;
 }
 
-td.price, tr.total-line td {
-  text-align: right;
-}
-
-td.total-price {
-  font-weight: bold; 
-  border-top: 1px solid #595;
-}
-
 div.field, div.actions {
   margin-bottom: 1em;
 }
@@ -204,6 +195,10 @@ a, a span {
 
 a:hover, a span:hover {
   text-decoration: underline;
+}
+
+a.button, button {
+  text-decoration: none;
 }
 
 table.product-listing td, table.product-listing th {
@@ -281,12 +276,12 @@ div#footer-links {
   margin-bottom: 20px;
 }
 
-p.out-of-stock {
+p.out-of-stock, td.out-of-stock {
   color: #D12F19;
   font-weight: bold;
 }
 
-p.in-stock {
+p.in-stock, td.in-stock {
   font-weight: bold;
   color: #529214;
 }
@@ -317,4 +312,46 @@ div#paypal-logo table {
 
 div#paypal-logo h3 {
   margin-bottom: 5px;
+}
+
+table.basket th {
+  background-color: lightGrey;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+table.basket tr.product td {
+  border-bottom: 1px dotted #666;
+}
+
+table.basket td.quantity {
+  text-align: center;
+}
+
+table.basket td.price, table.basket tr.total-line td {
+  text-align: right;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+table.basket td.total-price {
+  border-bottom: 2px solid #595;
+}
+
+div.basket-actions div.basket-actions-left {
+  width: 50%;
+  float: left;
+}
+
+div.basket-actions div.basket-actions-right {
+  width: 50%;
+  float: right;
+}
+
+div.basket-actions div.basket-actions-right div.checkout {
+  float: right;
+}
+
+div.basket-actions div.basket-actions-right div.checkout a.button {
+  margin-right: 0;
 }
