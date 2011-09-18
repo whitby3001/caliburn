@@ -30,7 +30,7 @@ class Basket < ActiveRecord::Base
       :currency_code => "GBP",
       :handling_cart => total_postage,
       :notify_url => notify_url,
-      :invoice_id => id
+      :invoice => id
     }
     line_items.each_with_index do |item, index|
       values.merge!({
