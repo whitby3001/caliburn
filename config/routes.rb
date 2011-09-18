@@ -1,4 +1,6 @@
 Caliburn::Application.routes.draw do
+  resources :payment_notifications, :only => :create
+
   devise_for :users
 
   resources :categories
