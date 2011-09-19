@@ -42,7 +42,7 @@
 			<div class="checkout">
 				<%= form_tag PAYPAL_CONFIG['url'] do %>
 				  <%= hidden_field_tag :cmd, "_s-xclick" %>
-				  <%= hidden_field_tag :encrypted, @basket.paypal_encrypted(root_url, payment_notifications_url(:secret => PAYPAL_CONFIG[:secret])) %>
+				  <%= hidden_field_tag :encrypted, @basket.paypal_encrypted(root_url, payment_notifications_url(:secret => PAYPAL_CONFIG['secret'])) %>
 				  <p><%= submit_tag "Checkout" %></p>
 				<% end %>
 			</div>
