@@ -5,7 +5,7 @@
 <% else %>
 	<table class="basket">
 		<tr>
-			<th colspan="2">Product</th>
+			<th colspan="2" class="product-name">Product</th>
 			<th>Status</th>
 			<th class="quantity">Quantity</th>
 			<th></th>
@@ -40,7 +40,11 @@
 		</div>
 		<div class="basket-actions-right">
 			<div class="checkout">
-				<%= link_to image_tag("basket_go.png")+' Checkout', @basket.paypal_url(root_url, payment_notifications_url), :class => "button positive" %>
+				<%= form_tag PAYPAL_CONFIG['url'] do %>
+				  <%= hidden_field_tag :cmd, "_s-xclick" %>
+				  <%= hidden_field_tag :encrypted, @basket.paypal_encrypted(root_url, payment_notifications_url(:secret => PAYPAL_CONFIG[:secret])) %>
+				  <p><%= submit_tag "Checkout" %></p>
+				<% end %>
 			</div>
 			<div class="clear"></div>
 		</div>

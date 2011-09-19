@@ -1,11 +1,17 @@
 development:
-  url: "https://www.sandbox.paypal.com/cgi-bin/webscr?"
-  seller: seller_1316033726_biz@gmail.com
+  url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  email: seller_1316033726_biz@gmail.com
+  cert_id: 82DTN8UWAWNNU
+  secret: supersecret
   
 test:
-  url: "https://www.sandbox.paypal.com/cgi-bin/webscr?"
-  seller: seller_1316033726_biz@gmail.com
+  url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  email: seller_1316033726_biz@gmail.com
+  cert_id: 82DTN8UWAWNNU
+  secret: supersecret
     
 production:
-  url: "https://www.sandbox.paypal.com/cgi-bin/webscr?"
-  seller: seller_1316033726_biz@gmail.com
+  url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  email: seller_1316033726_biz@gmail.com
+  cert_id: 82DTN8UWAWNNU
+  secret: supersecret

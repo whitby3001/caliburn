@@ -350,6 +350,10 @@ table.basket td.total-price {
   border-bottom: 2px solid #595;
 }
 
+table.basket th.product-name {
+  width: 40%;
+}
+
 div.basket-actions div.basket-actions-left {
   width: 50%;
   float: left;
