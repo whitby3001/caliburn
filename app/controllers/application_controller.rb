@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
   
   def current_basket
     if session[:basket_id]
-      basket = Basket.find(session[:basket_id])
-      session[:basket_id] = nil if basket.purchased_at
+      basket = Basket.where({:id => session[:basket_id]}).first
+      session[:basket_id] = nil if basket.nil? or basket.purchased_at
     end
     if session[:basket_id].nil?
       basket = Basket.create!
