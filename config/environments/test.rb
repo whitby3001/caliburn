@@ -39,4 +39,9 @@ Caliburn::Application.configure do
 
   # Allow pass debug_assets=true as a query parameter to load pages with unpackaged assets
   config.assets.allow_debugging = true
+  
+  PAYPAL_URL = "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  PAYPAL_EMAIL = "seller_1316033726_biz@gmail.com"
+  PAYPAL_CERT_ID = "82DTN8UWAWNNU"
+  PAYPAL_SECRET = "supersecret"
 end

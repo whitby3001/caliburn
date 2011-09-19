@@ -23,7 +23,7 @@ class Basket < ActiveRecord::Base
   
   def paypal_encrypted(return_url, notify_url)
     values = {
-      :business => PAYPAL_CONFIG['email'],
+      :business => PAYPAL_EMAIL,
       :cmd => '_cart',
       :upload => 1,
       :return => return_url,
@@ -31,7 +31,7 @@ class Basket < ActiveRecord::Base
       :handling_cart => total_postage,
       :notify_url => notify_url,
       :invoice => id,
-      :cert_id => PAYPAL_CONFIG['cert_id']
+      :cert_id => PAYPAL_CERT_ID
     }
     line_items.each_with_index do |item, index|
       values.merge!({

@@ -29,4 +29,9 @@ Caliburn::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  PAYPAL_URL = "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  PAYPAL_EMAIL = "seller_1316033726_biz@gmail.com"
+  PAYPAL_CERT_ID = "82DTN8UWAWNNU"
+  PAYPAL_SECRET = "supersecret"
+
 end

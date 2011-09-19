@@ -58,4 +58,9 @@ Caliburn::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  PAYPAL_URL = "https://www.paypal.com/cgi-bin/webscr"
+  PAYPAL_EMAIL = ENV['PAYPAL_EMAIL']
+  PAYPAL_CERT_ID = ENV['PAYPAL_CERT_ID']
+  PAYPAL_SECRET = ENV['PAYPAL_SECRET']
 end
