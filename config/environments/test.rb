@@ -44,4 +44,7 @@ Caliburn::Application.configure do
   PAYPAL_EMAIL = "seller_1316033726_biz@gmail.com"
   PAYPAL_CERT_ID = "82DTN8UWAWNNU"
   PAYPAL_SECRET = "supersecret"
+  PAYPAL_CERT_PEM = File.read("#{Rails.root}/certs/sandbox_paypal_cert.pem")
+  APP_CERT_PEM = File.read("#{Rails.root}/certs/app_cert.pem")
+  APP_KEY_PEM = File.read("#{Rails.root}/certs/app_key.pem")
 end
