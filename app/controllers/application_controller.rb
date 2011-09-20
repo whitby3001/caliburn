@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+  APP_DOMAIN = 'www.caliburnentertainment.co.uk'
+  
+  before_filter :ensure_domain
+  
   protect_from_forgery
   
   rescue_from CanCan::AccessDenied do |exception|
@@ -18,6 +22,13 @@ class ApplicationController < ActionController::Base
       session[:basket_id] = basket.id
     end
     basket
+  end
+  
+  def ensure_domain
+    if Rails.env.production? and request.env['HTTP_HOST'] != APP_DOMAIN
+      # HTTP 301 is a "permanent" redirect
+      redirect_to "http://#{APP_DOMAIN}", :status => 301
+    end
   end
   
 end
