@@ -20,12 +20,15 @@
 		</p>
 	<% end %>
 
-	<div class="product-price">
-		<%= number_to_currency(@product.price) %>
+	<div class="product-prices">
+		<span class="product-price"><%= number_to_currency(@product.price) %></span>
+		<% unless @product.postage_cost.nil? %>
+			<span class="product-postage">+ <%= number_to_currency(@product.postage_cost) %> P+P</span>
+		<% end %>
 	</div>
 	
 	<div class="product-buy">
-		<%= link_to image_tag('basket_put.png')+" Buy", line_items_path(:product_id => @product), :method => :post, :class => "button positive" %>
+		<span class="product-buy"><%= link_to image_tag('basket_put.png')+" Buy", line_items_path(:product_id => @product), :method => :post, :class => "button positive" %></span>
 	</div>
 
 	<div class="clear"></div>

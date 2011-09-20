@@ -8,20 +8,20 @@
 		<%= render :partial => 'layouts/banner' %>
 		<%= render :partial => 'layouts/flash' %>
 		<div id="left-sidebar-header" class="span-24 last"></div>
-			<div id="left-sidebar-bg" class="span-22 prepend-1 prepend-1">
-				<div class="span-5">
-					<div id="left-sidebar-content">
-						<%= yield :sidebar %>
-					</div>
-				</div>
-				<div class="span-17 last">
-					<div id="small-content">
-						<%= yield %>
-					</div>
+		<div id="left-sidebar-bg" class="span-22 prepend-1 prepend-1">
+			<div class="span-5">
+				<div id="left-sidebar-content">
+					<%= yield :sidebar %>
 				</div>
 			</div>
-			<div id="left-sidebar-footer" class="span-24 last"></div>	
+			<div class="span-17 last">
+				<div id="small-content">
+					<%= yield %>
+				</div>
+			</div>
 		</div>
+		<div id="left-sidebar-footer" class="span-24 last"></div>	
+		<%= render :partial => 'layouts/footer_links' %>
 	</div>
 </body>
 </html>

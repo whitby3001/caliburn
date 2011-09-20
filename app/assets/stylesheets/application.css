@@ -268,13 +268,30 @@ div#product-details p.description {
   clear:both;
 }
 
-div#product-details div.product-price {
+div#product-details div.product-prices {
+  width: 50%;
   float: left;
   margin-top: 1em;
+}
+
+div#product-details span.product-price {
+  display: block;
   font-weight: bold;
 }
 
+div#product-details span.product-postage {
+  display: block;
+  font-size: 10px;
+  color: #666;
+}
+
 div#product-details div.product-buy {
+  text-align: right;
+  width: 50%;
+  float: right;
+}
+
+div#product-details span.product-buy {
   float: right;
 }
 
