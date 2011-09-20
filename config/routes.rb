@@ -7,10 +7,10 @@ Caliburn::Application.routes.draw do
 
   match 'shopping_basket' => "basket#show", :as => :basket
   match 'empty_basket' => "basket#destroy", :as => :empty_basket
-  match 'shop' => "shop#index", :as => :shop
   match 'about' => "pages#about", :as => :about
   match 'contact' => "pages#contact", :as => :contact
   match 'terms' => "pages#terms", :as => :terms
+  match 'shop(/*ancestors)(/:category)' => 'shop#index', :as => :shop
   
   devise_scope :user do 
     get "/admin" => "devise/sessions#new"

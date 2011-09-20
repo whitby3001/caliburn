@@ -4,18 +4,18 @@
 			<li class="first"><%= link_to content_tag(:span, "Home"), root_path %></li>
 			<% for category in Category.roots %>
 				<li>
-					<%= link_to content_tag(:span, category.name.titleize), shop_path(:category => category.id) %>
+					<%= link_to content_tag(:span, category.name.titleize), shop_path(:ancestors => category.ancestors_for_route, :category => category.dasherized_name) %>
 					<% unless category.children.empty? %>
 						<div>
 							<ul>
 								<% for sub_category in category.children %>
 									<li class="parent">
-										<%= link_to content_tag(:span, sub_category.name.titleize), shop_path(:category => sub_category.id) %>
+										<%= link_to content_tag(:span, sub_category.name.titleize), shop_path(:ancestors => sub_category.ancestors_for_route, :category => sub_category.dasherized_name) %>
 										<% unless sub_category.children.empty? %>
 											<div>
 												<ul>
 													<% for sub_sub_category in sub_category.children %>
-														<li><%= link_to content_tag(:span, sub_sub_category.name.titleize), shop_path(:category => sub_sub_category.id) %></li>
+														<li><%= link_to content_tag(:span, sub_sub_category.name.titleize), shop_path(:ancestors => sub_sub_category.ancestors_for_route, :category => sub_sub_category.dasherized_name) %></li>
 													<% end %>
 												</ul>
 											</div>

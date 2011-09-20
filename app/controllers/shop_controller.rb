@@ -1,6 +1,6 @@
 class ShopController < ApplicationController
   def index
-    @category = Category.where(:id => params[:category]).first
+    @category = Category.where(:dasherized_name => params[:category]).first
     unless @category.nil?
       @title = @category.category_breadcrumb
       @root_category = @category.root
