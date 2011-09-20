@@ -2,11 +2,18 @@ module ApplicationHelper
   # Return a title on a per-page basis.
   def title
     base_title = "Caliburn Entertainment"
-    if @title.nil?
+    if @full_title
+      @full_title
+    elsif @title.nil?
       base_title
     else
-      "#{base_title} | #{@title}"
+      "#{@title} - #{base_title}"
     end
+  end
+  
+  # Return a description on a per-page basis.
+  def meta_description
+    @meta_description
   end
   
   def category_breadcrumb(category)

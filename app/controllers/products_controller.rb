@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @title = @product.name
+    @meta_description = "Product information for #{@product.name}."
   end
 
   # GET /products/new

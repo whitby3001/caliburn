@@ -1,4 +1,7 @@
 <title><%= title %></title>
+<% if meta_description %>
+	<meta name="description" content="<%= meta_description %>">
+<% end %>
 <%= stylesheet_link_tag    "application" %>
 <link rel="stylesheet" href="/assets/blueprint/print.css" type="text/css" media="print"> 
 <!--[if lt IE 8]>

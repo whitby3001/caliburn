@@ -8,8 +8,8 @@ class Category < ActiveRecord::Base
   
   before_validation :dasherize_name
   
-  def category_breadcrumb
-    self_and_ancestors.collect{ |c| c.name.titleize }.join(" > ")
+  def category_breadcrumb(joiner = ">")
+    self_and_ancestors.collect{ |c| c.name.titleize }.join(" #{joiner} ")
   end
   
   def ancestors_for_route

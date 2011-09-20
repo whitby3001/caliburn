@@ -2,6 +2,7 @@ class BasketController < ApplicationController
   # GET /cart
   def show
     @title = "Your Shopping Basket"
+    @meta_description = "View contents of your shopping basket."
     @basket = current_basket
   end
 
