@@ -1,5 +1,4 @@
 require 'builder'
-include Rails.application.routes.url_helpers
 
 class Sitemap
   STATIC_URLS = ['/about',
@@ -8,6 +7,7 @@ class Sitemap
 
   class << self
     def generate
+      include Rails.application.routes.url_helpers
       @bad_pages = []  
       @pages_to_visit = []
       @url = "http://www.caliburnentertainment.co.uk"
