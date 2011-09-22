@@ -44,6 +44,20 @@ h1.homepage {
   margin-bottom: 5px;
 }
 
+#banner-holder {
+  height: 88px;
+}
+
+#menu-holder {
+  height: 45px;
+}
+
+#menu {
+  position: absolute;
+  top: 95px;
+  width: 870px;
+}
+
 #banner-links {
   margin-top: 60px;
 }

@@ -1,15 +1,19 @@
 <div id="header" class="span-24 last">
-	<div id="banner" class="span-10 prepend-1">
-		<%= link_to image_tag("logo.png"), root_path %>
+	<div id="banner-holder" class="span-24 last">
+		<div id="banner" class="span-10 prepend-1">
+			<%= link_to image_tag("logo.png"), root_path %>
+		</div>
+		<div id="banner-links" class="span-12 append-1 last">
+			<% if user_signed_in? %>
+				<%= link_to content_tag(:span, "Sign Out"), destroy_user_session_path, :method => :delete %> | 
+			<% end %>
+			<%= link_to(basket_path) do %>
+				<img src="/assets/basket.png">
+				<span>View Basket</span>
+			<% end %>
+		</div>
 	</div>
-	<div id="banner-links" class="span-12 append-1 last">
-		<% if user_signed_in? %>
-			<%= link_to content_tag(:span, "Sign Out"), destroy_user_session_path, :method => :delete %> | 
-		<% end %>
-		<%= link_to(basket_path) do %>
-			<img src="/assets/basket.png">
-			<span>View Basket</span>
-		<% end %>
+	<div id="menu-holder" class="span-22 prepend-1 append-1 last">
+		
 	</div>
-	<%= render :partial => 'layouts/menu' %>
 </div>
