@@ -11,7 +11,6 @@ class Sitemap
       @bad_pages = []  
       @pages_to_visit = []
       @url = "http://www.caliburnentertainment.co.uk"
-      @url_domain = url[/([a-z0-9-]+)\.([a-z.]+)/i]
       
       @pages_to_visit  = STATIC_URLS
       @pages_to_visit += Product.all.collect{ |a| product_path(a) }
