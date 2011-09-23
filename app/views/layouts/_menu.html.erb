@@ -2,7 +2,7 @@
 	<div id="menu">
 		<ul class="menu">
 			<li class="first"><%= link_to content_tag(:span, "Home"), root_path %></li>
-			<% for category in Category.roots %>
+			<% for category in Category.roots.includes({:children => :children}) %>
 				<li>
 					<%= link_to content_tag(:span, category.name.titleize), shop_path(:ancestors => category.ancestors_for_route, :category => category.dasherized_name) %>
 					<% unless category.children.empty? %>
