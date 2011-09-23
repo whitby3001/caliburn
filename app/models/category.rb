@@ -20,6 +20,6 @@ class Category < ActiveRecord::Base
   private
   
   def dasherize_name
-    dasherized_name = name.nil? ? nil : name.downcase.gsub(/[^a-z0-9]+/i, '-')
+    self.dasherized_name = name.nil? ? nil : name.downcase.gsub(/[^a-z0-9]+/i, '-')
   end
 end
