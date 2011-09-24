@@ -21,10 +21,54 @@
     <%= f.select :category_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }, :prompt => true %>
   </div>
 
+	<div class="field">
+    <%= f.label :google_category, link_to("Google category", "http://www.google.com/support/merchants/bin/answer.py?answer=160081") %><br />
+    <%= f.text_field :google_category, :class => "text" %>
+  </div>
+
+	<div class="field">
+    <%= f.label :condition %><br />
+    <%= f.select :condition, [["New", "new"], ["Used", "used"], ["Refurbished", "refurbished"]], :prompt => true %>
+  </div>
+
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description, :class => "text" %>
   </div>
+	
+	<div class="field">
+    <%= f.label :brand %><br />
+    <%= f.text_field :brand, :class => "text" %>
+  </div>
+
+	<div class="field">
+    <%= f.label :mpn, "Manufacturer's Part Number (MPN)" %><br />
+    <%= f.text_field :mpn, :class => "text" %>
+  </div>
+	
+	<fieldset>
+		<legend>Barcode</legend>
+		<div class="field">
+	    <%= f.label :upc, "UPC (North America, 12 digits)" %><br />
+	    <%= f.text_field :upc, :class => "text" %>
+	  </div>
+
+		<div class="field">
+	    <%= f.label :ean, "EAN (Europe, 13 digits)" %><br />
+	    <%= f.text_field :ean, :class => "text" %>
+	  </div>
+
+		<div class="field">
+	    <%= f.label :jan, "JAN (Japan, 8 or 13 digits)" %><br />
+	    <%= f.text_field :jan, :class => "text" %>
+	  </div>
+
+		<div class="field">
+	    <%= f.label :isbn, "ISBN (Books, 10 or 13 digits)" %><br />
+	    <%= f.text_field :isbn, :class => "text" %>
+	  </div>
+	</fieldset>
+	
   <div class="field">
     <%= f.label :price %><br />
     <%= f.text_field :price, :class => "text" %>
