@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20110924205029) do
   create_table "products", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.decimal  "price",              :precision => 8, :scale => 2
+    t.decimal  "price",                           :precision => 8, :scale => 2
     t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(:version => 20110924205029) do
     t.datetime "image_updated_at"
     t.integer  "category_id"
     t.boolean  "featured"
-    t.decimal  "postage_cost",       :precision => 8, :scale => 2
-    t.integer  "upc"
-    t.integer  "ean"
+    t.decimal  "postage_cost",                    :precision => 8, :scale => 2
+    t.integer  "upc",                :limit => 8
+    t.integer  "ean",                :limit => 8
     t.integer  "jan"
     t.integer  "isbn"
     t.string   "brand"

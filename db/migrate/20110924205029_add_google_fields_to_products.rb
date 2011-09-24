@@ -1,7 +1,7 @@
 class AddGoogleFieldsToProducts < ActiveRecord::Migration
   def change
-    add_column :products, :upc, :integer
-    add_column :products, :ean, :integer
+    add_column :products, :upc, :integer, :limit => 8
+    add_column :products, :ean, :integer, :limit => 8
     add_column :products, :jan, :integer
     add_column :products, :isbn, :integer
     add_column :products, :brand, :string
