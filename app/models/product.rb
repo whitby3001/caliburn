@@ -11,7 +11,6 @@ class Product < ActiveRecord::Base
   
   validates_presence_of :name, :category, :description, :price, :quantity, :postage_cost
   validates_numericality_of :price, :postage_cost
-  validates_numericality_of :upc, :ean, :jan, :isbn, :allow_nil => true
   validates :upc, :length => {:is => 12}, :allow_nil => true
   validates :ean, :length => {:is => 13}, :allow_nil => true
   validates :jan, :length => {:within => 8..13}, :allow_nil => true

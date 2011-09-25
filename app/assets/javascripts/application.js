@@ -24,4 +24,8 @@ function nav(){
 
 $(document).ready(function() {
   nav();
+  $('.extra-info-link').click(function(event) {
+    $('.extra-info').toggle();
+    event.preventDefault();
+  })
 });
