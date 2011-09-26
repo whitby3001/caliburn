@@ -10,6 +10,7 @@ Caliburn::Application.routes.draw do
   match 'about' => "pages#about", :as => :about
   match 'contact' => "pages#contact", :as => :contact
   match 'terms' => "pages#terms", :as => :terms
+  match 'shop/feed' => 'shop#feed'
   match 'shop(/*ancestors)/:category/page/:page' => 'shop#index'
   match 'shop(/*ancestors)/:category' => 'shop#index', :as => :shop
   match 'shop' => 'shop#index', :as => :shop_overview

@@ -13,4 +13,10 @@ class ShopController < ApplicationController
       @products = Product.in_stock.order(:name).page(params[:page]).per(24)
     end
   end
+  
+  def product_feed
+    respond_to do |format|
+      format.xml {render :layout => false}
+    end
+  end
 end
