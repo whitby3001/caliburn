@@ -18,7 +18,7 @@ xml.rss("xmlns:g" => "http://base.google.com/ns/1.0", :version => "2.0") do
             xml.text! product.description
           end
           xml.tag!("g:google_product_category") do
-            xml.text! product.google_category.blank? ? product.category.google_category : product.google_category
+            xml.text! product.category.google_category
           end
           xml.tag!("g:product_type") do
             xml.text! product.category_breadcrumb("&gt;")

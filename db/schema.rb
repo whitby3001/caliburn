@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110925184032) do
+ActiveRecord::Schema.define(:version => 20110926164443) do
 
   create_table "baskets", :force => true do |t|
     t.datetime "created_at"
@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(:version => 20110925184032) do
     t.string   "brand"
     t.string   "mpn"
     t.string   "condition"
-    t.string   "google_category"
     t.string   "barcode"
   end
 

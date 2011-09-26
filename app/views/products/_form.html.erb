@@ -22,11 +22,6 @@
   </div>
 
 	<div class="field">
-    <%= f.label :google_category, link_to("Google category", "http://www.google.com/support/merchants/bin/answer.py?answer=160081") %><br />
-    <%= f.text_field :google_category, :class => "text" %>
-  </div>
-
-	<div class="field">
     <%= f.label :condition %><br />
     <%= f.select :condition, [["New", "new"], ["Used", "used"], ["Refurbished", "refurbished"]], :prompt => true %>
   </div>
