@@ -24,10 +24,13 @@ xml.rss("xmlns:g" => "http://base.google.com/ns/1.0", :version => "2.0") do
             xml.text! product.category_breadcrumb("&gt;")
           end
           xml.link do
-            xml.text! "http://www.caliburn_entertainment.co.uk" + product_path(product)
+            xml.text! "http://www.caliburnentertainment.co.uk" + product_path(product)
           end
           xml.tag!("g:image_link") do
             xml.text! product.image.url
+          end
+          xml.tag!("g:condition") do
+            xml.text! product.condition
           end
           xml.tag!("g:availability") do
             xml.text! product.quantity > 0 ? 'in stock' : 'out of stock'
