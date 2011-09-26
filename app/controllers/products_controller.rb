@@ -4,6 +4,11 @@ class ProductsController < ApplicationController
   # GET /products
   def index
     @products = Product.order(:name)
+    
+    respond_to do |format|
+      format.html
+      format.xml {render :layout => false}
+    end
   end
 
   # GET /products/1

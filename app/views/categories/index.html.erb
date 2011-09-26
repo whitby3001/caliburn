@@ -4,6 +4,7 @@
   <tr>
     <th>Name</th>
 		<th>Parent</th>
+		<th>Google Category</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,7 @@
   <tr>
     <td><span class="level-<%= category.level %>"><%= category.name %></span></td>
 		<td><%= category.parent.name unless category.parent.nil? %></td>
+		<td><%= category.google_category %></td>
     <td><%= link_to 'View', category, :class => "button positive" %></td>
     <td><%= link_to 'Edit', edit_category_path(category), :class => "button" %></td>
     <td><%= link_to 'Destroy', category, :class => "button negative", :confirm => 'Are you sure?', :method => :delete %></td>

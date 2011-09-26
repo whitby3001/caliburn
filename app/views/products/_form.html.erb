@@ -46,28 +46,10 @@
     <%= f.text_field :mpn, :class => "text" %>
   </div>
 	
-	<fieldset>
-		<legend>Barcode</legend>
-		<div class="field">
-	    <%= f.label :ean, "EAN (Europe, 13 digits)" %><br />
-	    <%= f.text_field :ean, :class => "text" %>
-	  </div>
-		
-		<div class="field">
-	    <%= f.label :upc, "UPC (North America, 12 digits)" %><br />
-	    <%= f.text_field :upc, :class => "text" %>
-	  </div>
-
-		<div class="field">
-	    <%= f.label :jan, "JAN (Japan, 8 or 13 digits)" %><br />
-	    <%= f.text_field :jan, :class => "text" %>
-	  </div>
-
-		<div class="field">
-	    <%= f.label :isbn, "ISBN (Books, 10 or 13 digits)" %><br />
-	    <%= f.text_field :isbn, :class => "text" %>
-	  </div>
-	</fieldset>
+	<div class="field">
+    <%= f.label :barcode %><br />
+    <%= f.text_field :barcode, :class => "text" %>
+  </div>
 	
   <div class="field">
     <%= f.label :price %><br />
