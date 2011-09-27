@@ -27,7 +27,7 @@ xml.rss("xmlns:g" => "http://base.google.com/ns/1.0", :version => "2.0") do
             xml.text! "http://www.caliburnentertainment.co.uk" + product_path(product)
           end
           xml.tag!("g:image_link") do
-            xml.text! product.image.url
+            xml.text! product.image.url(:medium)
           end
           xml.tag!("g:condition") do
             xml.text! product.condition
