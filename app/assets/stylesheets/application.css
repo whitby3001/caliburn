@@ -5,8 +5,8 @@
  *= require blueprint/screen
  *= require blueprint/fancy_type
  *= require blueprint/buttons
- *= require_self
  *= require_directory . 
+ *= require_self
 */
 
 p + p {
@@ -69,6 +69,7 @@ h1.homepage {
 
 #full-content, #left-sidebar-content, #small-content, .sidebar-single-content, .standard-box-content {
   margin: 0 15px;
+  overflow: hidden;
 }
 
 #full-content-header, #left-sidebar-header, .sidebar-single-header, .standard-box-header {

@@ -28,4 +28,6 @@ $(document).ready(function() {
     $('.extra-info').toggle();
     event.preventDefault();
   })
+  
+  $('a.fancybox').fancybox();
 });

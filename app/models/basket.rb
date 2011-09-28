@@ -18,7 +18,8 @@ class Basket < ActiveRecord::Base
   end
   
   def total_postage
-    line_items.to_a.sum { |item| item.total_postage }
+    actual = line_items.to_a.sum { |item| item.total_postage }
+    actual > 12 ? 12 : actual
   end
   
   def paypal_encrypted(return_url, notify_url)

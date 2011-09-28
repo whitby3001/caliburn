@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
                     :convert_options => {:thumbnail => "-background transparent -gravity center -extent 100x100", :small => "-background transparent -gravity center -extent 200x200"},
                     :storage => (Rails.env.production? ? :s3 : :filesystem), 
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
-                    :path => (Rails.env.production? ? "/:class/:attachment/:id/:style/:filename" : "/system/:attachment/:id/:style/:filename")
+                    :path => (Rails.env.production? ? "/:class/:attachment/:id/:style/:filename" : ":rails_root/public/system/:attachment/:id/:style/:filename")
   
   validates_presence_of :name, :category, :description, :price, :quantity, :postage_cost
   validates_numericality_of :price, :postage_cost
