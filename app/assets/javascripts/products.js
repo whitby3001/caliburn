@@ -9,4 +9,8 @@ $(document).ready(function() {
   
   $("a[rel=product-images]").fancybox();
   $("a[rel=main-product-images]").fancybox();
+  
+  $("#all-product-listings").tableFilter({
+    additionalFilterTriggers: [$('#quick_find')]
+  });
 });

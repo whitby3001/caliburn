@@ -216,16 +216,20 @@ a.button, button {
   text-decoration: none;
 }
 
-table.product-listing td, table.product-listing th {
+table#all-product-listings {
+  font-size: 10px;
+}
+
+table#all-product-listings td, table#all-product-listings th {
   padding: 4px 5px;
   border-bottom: 1px solid #666;
 }
 
-table.product-listing .extra-info {
+table#all-product-listings .extra-info {
   display: none;
 }
 
-table.product-listing .destroy-link {
+table#all-product-listings .destroy-link {
   width: 80px;
 }
 
