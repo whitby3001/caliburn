@@ -62,10 +62,37 @@
     <%= f.label :featured %><br />
     <%= f.check_box :featured %>
   </div>
-	<div class="field">
-    <%= f.label :image %><br />
-    <%= f.file_field :image %>
-  </div>
+	
+	<fieldset>
+		<legend>Main Image</legend>
+		<table>
+	    <tr>
+				<% unless @product.image.nil? %>
+					<td><%= image_tag(@product.image.url(:thumb)) %></td>
+				<% else %>
+					<td></td>
+				<% end %>
+				<td><%= f.file_field :image %></td>
+			</tr>
+		</table>
+	</fieldset>
+
+	<fieldset>
+		<legend>Additional Images</legend>
+		<table>
+			<%= f.fields_for :additional_images do |image_fields| %>
+			<tr>
+				<% unless image_fields.object.new_record? %>
+					<td><%= image_fields.check_box :_destroy %> Delete?</td>
+					<td><%= image_tag(image_fields.object.image.url(:thumb)) %></td>
+				<% else %>
+					<td colspan="2">Add new image</td>
+				<% end %>
+				<td><%= image_fields.file_field :image %></td>
+			</tr>
+			<% end%>
+		</table>
+	</fieldset>
 	
   <div class="actions">
 		<button name="commit" type="submit" class="positive">

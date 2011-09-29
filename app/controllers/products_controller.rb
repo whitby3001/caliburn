@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @title = @product.name
     @meta_description = "Product information for #{@product.name}."
+    @all_images = [@product] + @product.additional_images
   end
 
   # GET /products/new
@@ -21,6 +22,7 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    5.times {@product.additional_images.build}
   end
 
   # POST /products

@@ -1,5 +1,21 @@
 <div class="span-8">
-	<%= link_to image_tag(@product.image.url(:medium), :alt => @product.name.titleize, :title => @product.name.titleize), @product.image.url(:original), :class => "fancybox" %>
+	<div class="span-8 last">
+		<div id="main-product-image">
+			<%= link_to image_tag(@product.image.url(:medium), :alt => @product.name.titleize, :title => @product.name.titleize), @product.image.url(:original), :class => "fancybox" %>
+		</div>
+	</div>
+	<div class="span-8 last">
+		<% @all_images.in_groups_of(3).each do |group| %>
+			<div class="product-thumbs">
+				<% group.each do |image| %>
+					<% unless image.nil? %>
+						<%= render :partial => 'image', :locals => {:img => image} %>
+					<% end %>
+				<% end %>
+				<div class="clear"></div>
+			</div>
+		<% end %>
+	</div>
 </div>
 
 <div id="product-details" class="span-13 last">

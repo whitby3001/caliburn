@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110926164443) do
+ActiveRecord::Schema.define(:version => 20110928232323) do
+
+  create_table "additional_images", :force => true do |t|
+    t.integer  "product_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.string   "image_file_size"
+    t.string   "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "baskets", :force => true do |t|
     t.datetime "created_at"

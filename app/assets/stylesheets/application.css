@@ -412,3 +412,16 @@ div.basket-actions div.basket-actions-right div.checkout {
 div.basket-actions div.basket-actions-right div.checkout a.button {
   margin-right: 0;
 }
+
+div.product-thumbs, div#main-product-image {
+  width: 300px;
+}
+
+div.product-thumbs span {
+  float: left;;
+  margin-left: 6px;
+}
+
+div.product-thumbs span:first-child {
+  margin-left: 0px;
+}

@@ -1,0 +1,15 @@
+<% if img.class == Product %>
+	<span>
+		<%= link_to image_tag(img.image.url(:thumb)), img.image.url(:original), :class => "fancybox" %>
+		<div style="display:none">
+			<%= link_to image_tag(img.image.url(:medium)), img.image.url(:original), :class => "fancybox" %>
+		</div>
+	</span>
+<% else %>
+	<span>
+		<%= link_to image_tag(img.image.url(:thumb)), img.image.url(:original), :class => "fancybox" %>
+		<div style="display:none">
+			<%= link_to image_tag(img.image.url(:medium)), img.image.url(:original), :class => "fancybox" %>
+		</div>
+	</span>
+<% end %>
