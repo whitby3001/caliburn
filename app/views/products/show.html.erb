@@ -1,7 +1,7 @@
 <div class="span-8">
 	<div class="span-8 last">
 		<div id="main-product-image">
-			<%= link_to image_tag(@product.image.url(:medium), :alt => @product.name.titleize, :title => @product.name.titleize), @product.image.url(:original), :class => "fancybox" %>
+			<%= link_to image_tag(@product.image.url(:medium), :alt => @product.name.titleize, :title => @product.name.titleize), @product.image.url(:original), :class => "fancybox", :rel => "main-product-images" %>
 		</div>
 	</div>
 	<div class="span-8 last">
