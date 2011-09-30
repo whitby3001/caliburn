@@ -29,5 +29,7 @@ $(document).ready(function() {
     event.preventDefault();
   })
   
-  $('a.fancybox').fancybox();
+  $('a.fancybox').fancybox({
+    'titlePosition'		: 'inside'
+  });
 });
