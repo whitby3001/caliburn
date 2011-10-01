@@ -21,17 +21,17 @@
 	<h3>Refine</h3>
 	<% unless @root_category.nil? %>
 		<ul class="categories">
-			<li class="<%= 'current' if @root_category == @category %>"><%= link_to_unless_current @root_category.name.titleize, shop_path(:ancestors => @root_category.ancestors_for_route, :category => @root_category.dasherized_name) %></li>
+			<li class="<%= 'current' if @root_category == @category %>"><%= link_to_unless_current @root_category.capitalized_name, shop_path(:ancestors => @root_category.ancestors_for_route, :category => @root_category.dasherized_name) %></li>
 			<% unless @root_category.children.empty? %>
 				<li>
 					<ul class="categories sub-categories">
 						<% for sub_category in @root_category.children.sort_by(&:name) %>
-							<li class="<%= 'current' if sub_category == @category %>"><%= link_to_unless_current sub_category.name.titleize, shop_path(:ancestors => sub_category.ancestors_for_route, :category => sub_category.dasherized_name) %></li>
+							<li class="<%= 'current' if sub_category == @category %>"><%= link_to_unless_current sub_category.capitalized_name, shop_path(:ancestors => sub_category.ancestors_for_route, :category => sub_category.dasherized_name) %></li>
 							<% unless sub_category.children.empty? %>
 								<li>
 									<ul class="categories sub-categories">
 										<% for sub_sub_category in sub_category.children.sort_by(&:name) %>
-											<li class="<%= 'current' if sub_sub_category == @category %>"><%= link_to_unless_current sub_sub_category.name.titleize, shop_path(:ancestors => sub_sub_category.ancestors_for_route, :category => sub_sub_category.dasherized_name) %></li>
+											<li class="<%= 'current' if sub_sub_category == @category %>"><%= link_to_unless_current sub_sub_category.capitalized_name, shop_path(:ancestors => sub_sub_category.ancestors_for_route, :category => sub_sub_category.dasherized_name) %></li>
 										<% end %>
 									</ul>
 								</li>

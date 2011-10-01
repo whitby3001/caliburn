@@ -20,7 +20,7 @@ module ApplicationHelper
     unless category.nil?
       links = []
       category.self_and_ancestors.each do |cat|
-        links << link_to(cat.name.titleize, shop_path(:ancestors => cat.ancestors_for_route, :category => cat.dasherized_name))
+        links << link_to(cat.capitalized_name, shop_path(:ancestors => cat.ancestors_for_route, :category => cat.dasherized_name))
       end
       return content_tag(:p, raw(links.join(" > ")))
     end

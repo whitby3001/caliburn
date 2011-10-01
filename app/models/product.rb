@@ -26,4 +26,11 @@ class Product < ActiveRecord::Base
   def has_all_google_fields?
     !name.blank? and !description.blank? and !category.google_category.blank? and !category.nil? and !image.nil? and !condition.blank? and !price.blank? and !brand.blank? and !barcode.blank? and !postage_cost.blank?
   end
+  
+  def capitalized_name
+    words = name.split(" ")
+    new_words = []
+    words.each {|w| new_words << w[0].chr.upcase + w[1, w.length-1]}
+    new_words.join(" ")
+  end
 end

@@ -19,7 +19,7 @@
 </div>
 
 <div id="product-details" class="span-13 last">
-	<h1><%= @product.name.titleize %></h1>
+	<h1><%= @product.capitalized_name %></h1>
 	<%= category_breadcrumb(@product.category) %>
 
 	<p class="description">
