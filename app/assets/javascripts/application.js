@@ -6,13 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.easing-1.3.pack
-//= require jquery.fancybox-1.3.4.pack
-//= require jquery.mousewheel-3.0.4.pack
-//= require picnet.table.filter.min
-//= require tiny_mce
-//= require products
-//= require_self
+//= require_tree .
 
 function nav(){
   $('div#nav ul li').mouseover(function() {
