@@ -23,7 +23,7 @@
 	<%= category_breadcrumb(@product.category) %>
 
 	<p class="description">
-	  <%= @product.description %>
+	  <%= raw(@product.description) %>
 	</p>
 
 	<% unless @product.quantity == 0 %>
