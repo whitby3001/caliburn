@@ -11,6 +11,6 @@ class BasketController < ApplicationController
     @basket = current_basket 
     @basket.destroy 
     session[:basket_id] = nil
-    redirect_to(shop_url, :notice => 'Your shopping basket is currently empty')
+    redirect_to(shop_overview_path, :notice => 'Your shopping basket is currently empty')
   end
 end

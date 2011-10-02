@@ -19,7 +19,11 @@ class Basket < ActiveRecord::Base
   
   def total_postage
     actual = line_items.to_a.sum { |item| item.total_postage }
-    actual > 12 ? 12 : actual
+    if line_items.any? {|l| l.product.postage_cost > 12 }
+      return actual
+    else
+      actual > 12 ? 12 : actual
+    end
   end
   
   def paypal_encrypted(return_url, notify_url)
