@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
   def home
-    @full_title = "Caliburn Entertainment - Buy Miniatures, Transformers, Star Wars, Warhammer"
+    @full_title = "Caliburn Entertainment - Buy Miniatures, Toys, Transformers, Star Wars, Warhammer"
     @featured_products = Product.in_stock.featured.limit(3)
     @new_products = Product.order("created_at DESC").limit(3)
-    @meta_description = "Caliburn Entertainment sells a wide variety of action figures, miniatures and books. We specialise in Transformers, Star Wars, Warhammer and many other science fiction and fantasy related items."
+    @meta_description = "Caliburn Entertainment sells a wide variety of toys, action figures, miniatures and books. We specialise in Transformers, Star Wars, Warhammer 40K and many other science fiction and fantasy related items."
     render :layout => "home"
   end
 
