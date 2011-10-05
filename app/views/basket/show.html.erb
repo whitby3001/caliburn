@@ -43,7 +43,9 @@
 				<%= form_tag PAYPAL_URL do %>
 				  <%= hidden_field_tag :cmd, "_s-xclick" %>
 				  <%= hidden_field_tag :encrypted, @basket.paypal_encrypted(root_url, payment_notifications_url(:secret => PAYPAL_SECRET)) %>
-				  <p><%= submit_tag "Checkout" %></p>
+				  <p>
+						<input type="image" name="submit" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif">
+					</p>
 				<% end %>
 			</div>
 			<div class="clear"></div>
