@@ -429,3 +429,7 @@ div.product-thumbs span {
 div.product-thumbs span:first-child {
   margin-left: 0px;
 }
+
+p.feedback span {
+  font-style: italic;
+}

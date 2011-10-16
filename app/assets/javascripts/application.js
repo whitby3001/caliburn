@@ -32,4 +32,10 @@ $(document).ready(function() {
   $('a.fancybox').fancybox({
     'titlePosition'		: 'inside'
   });
+  
+  $('#feedback').cycle({
+    fx: 'scrollUp',
+    speed: 2000,
+    pause: 1
+  });
 });
