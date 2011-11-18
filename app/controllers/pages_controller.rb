@@ -21,5 +21,9 @@ class PagesController < ApplicationController
     @title = "Terms & Conditions"
     @meta_description = "Information on our terms and conditions including postage costs and returns."
   end
+  
+  def exception_notification_test
+    raise "This is a test"
+  end
 
 end
