@@ -7,9 +7,9 @@ class PaymentNotificationsController < ApplicationController
         params[:secret] == PAYPAL_SECRET &&
         params[:receiver_email] == PAYPAL_EMAIL &&
         params[:mc_currency] == "GBP"
-      PaymentNotification.create!(:params => params, :basket_id => params[:invoice], :status => params[:payment_status], :transaction_id => params[:txn_id])
-      render :nothing => true
+      PaymentNotification.create!(:params => params, :basket_id => params[:invoice], :status => params[:payment_status], :transaction_id => params[:txn_id]) 
     end
+    render :nothing => true
   end
 
 end
