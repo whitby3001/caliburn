@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110928232323) do
+ActiveRecord::Schema.define(:version => 20120603181111) do
 
   create_table "additional_images", :force => true do |t|
     t.integer  "product_id"
@@ -22,11 +22,16 @@ ActiveRecord::Schema.define(:version => 20110928232323) do
     t.datetime "updated_at"
   end
 
+  add_index "additional_images", ["id"], :name => "index_additional_images_on_id"
+  add_index "additional_images", ["product_id"], :name => "index_additional_images_on_product_id"
+
   create_table "baskets", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "purchased_at"
   end
+
+  add_index "baskets", ["id"], :name => "index_baskets_on_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -39,6 +44,10 @@ ActiveRecord::Schema.define(:version => 20110928232323) do
     t.string   "google_category"
   end
 
+  add_index "categories", ["dasherized_name"], :name => "index_categories_on_dasherized_name"
+  add_index "categories", ["id"], :name => "index_categories_on_id"
+  add_index "categories", ["lft"], :name => "index_categories_on_lft"
+
   create_table "line_items", :force => true do |t|
     t.integer  "product_id"
     t.integer  "basket_id"
@@ -48,6 +57,10 @@ ActiveRecord::Schema.define(:version => 20110928232323) do
     t.datetime "updated_at"
   end
 
+  add_index "line_items", ["basket_id"], :name => "index_line_items_on_basket_id"
+  add_index "line_items", ["id"], :name => "index_line_items_on_id"
+  add_index "line_items", ["product_id"], :name => "index_line_items_on_product_id"
+
   create_table "payment_notifications", :force => true do |t|
     t.text     "params"
     t.integer  "basket_id"
@@ -56,6 +69,9 @@ ActiveRecord::Schema.define(:version => 20110928232323) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "payment_notifications", ["basket_id"], :name => "index_payment_notifications_on_basket_id"
+  add_index "payment_notifications", ["id"], :name => "index_payment_notifications_on_id"
 
   create_table "products", :force => true do |t|
     t.string   "name"
@@ -77,6 +93,14 @@ ActiveRecord::Schema.define(:version => 20110928232323) do
     t.string   "barcode"
   end
 
+  add_index "products", ["category_id"], :name => "index_products_on_category_id"
+  add_index "products", ["featured"], :name => "index_products_on_featured"
+  add_index "products", ["id"], :name => "index_products_on_id"
+  add_index "products", ["name"], :name => "index_products_on_name"
+  add_index "products", ["quantity", "category_id", "name"], :name => "index_products_on_quantity_and_category_id_and_name"
+  add_index "products", ["quantity", "name"], :name => "index_products_on_quantity_and_name"
+  add_index "products", ["quantity"], :name => "index_products_on_quantity"
+
   create_table "users", :force => true do |t|
     t.string   "email",                              :default => "", :null => false
     t.string   "encrypted_password",  :limit => 128, :default => "", :null => false
@@ -87,5 +111,6 @@ ActiveRecord::Schema.define(:version => 20110928232323) do
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["id"], :name => "index_users_on_id"
 
 end
