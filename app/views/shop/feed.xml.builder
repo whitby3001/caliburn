@@ -29,11 +29,11 @@ xml.rss("xmlns:g" => "http://base.google.com/ns/1.0", :version => "2.0") do
             xml.text! "http://www.caliburnentertainment.co.uk" + product_path(product)
           end
           xml.tag!("g:image_link") do
-            xml.text! "http://www.caliburnentertainment.co.uk" + product.image.url(:medium)
+            xml.text! product.image.url(:medium)
           end
           product.additional_images.each do |add_image|
             xml.tag!("g:additional_image_link") do
-              xml.text! "http://www.caliburnentertainment.co.uk" + add_image.image.url(:medium)
+              xml.text! add_image.image.url(:medium)
             end
           end
           xml.tag!("g:condition") do
