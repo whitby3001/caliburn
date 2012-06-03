@@ -14,7 +14,7 @@ class ShopController < ApplicationController
     end
   end
   
-  def product_feed
+  def feed
     respond_to do |format|
       format.xml {render :layout => false}
     end
