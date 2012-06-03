@@ -59,9 +59,6 @@ xml.rss("xmlns:g" => "http://base.google.com/ns/1.0", :version => "2.0") do
             xml.tag!("g:country") do
               xml.text! "GB"
             end
-            xml.tag!("g:service") do
-              xml.text! "Royal Mail"
-            end
             xml.tag!("g:price") do
               xml.text! number_to_currency(product.postage_cost, :unit => 'GBP', :format => '%n %u')
             end
