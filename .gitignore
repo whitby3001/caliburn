@@ -11,3 +11,4 @@ doc/
 
 /public/system/
 /dump.rdb
+.env
