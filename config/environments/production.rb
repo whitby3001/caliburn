@@ -59,7 +59,7 @@ Caliburn::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   
-  config.middleware.use ExceptionNotifier,
+  config.middleware.use ExceptionNotification::Rack,
     :email_prefix => "[Exception] ",
     :sender_address => %{"Exception Notifier" <errors@caliburnentertainment.co.uk>},
     :exception_recipients => %w{whitby3001@gmail.com}
