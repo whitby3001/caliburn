@@ -59,7 +59,13 @@ h1.homepage {
 }
 
 #banner-links {
-  margin-top: 60px;
+  margin-top: 20px;
+}
+
+#banner-links .address {
+  font-size: 20px;
+  display:block;
+  margin-bottom: 10px;
 }
  
 #header {
@@ -433,3 +439,4 @@ div.product-thumbs span:first-child {
 p.feedback span {
   font-style: italic;
 }
+

@@ -1,9 +1,19 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div id="header" class="span-24 last">
 	<div id="banner-holder" class="span-24 last">
 		<div id="banner" class="span-10 prepend-1">
-			<%= link_to image_tag("logo.png"), root_path %>
+			<%= link_to image_tag("logo-whitesmoke.png"), root_path %>
 		</div>
 		<div id="banner-links" class="span-12 append-1 last">
+			<span class="address">2 Castle Court, Bailey Street, Oswestry</span>
 			<% if user_signed_in? %>
 				<%= link_to content_tag(:span, "Sign Out"), destroy_user_session_path, :method => :delete %> | 
 			<% end %>
